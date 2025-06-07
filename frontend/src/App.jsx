@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './Dashboard';
-import Services from './service';
-import AboutUs from './AboutUs'; // 🔥 Fixed: match file name exactly
-import NotFound from './NotFound';
+import Dashboard from './pages/Dashboard';
+import Services from './pages/service';
+// import AboutUs from './AboutUs'; // 🔥 Fixed: match file name exactly
+import AboutUs from './pages/aboutus'
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
