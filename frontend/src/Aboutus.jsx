@@ -9,7 +9,7 @@ import { FaBullseye, FaEye, FaHeart, FaTools } from "react-icons/fa";
 // Or use URLs directly:
 const logos = [
   // If you have local imports, replace these URLs with imported variables
-  "src/logo.png",
+  // "src/logo.png",
 //   "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Gikondo_Secondary_School_Logo.png/600px-Gikondo_Secondary_School_Logo.png",
 ];
 
