@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive School Dashboard with Animated Background</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1D4ED8",
+            accent: "#16A34A",
+            soft: "#F1F5F9",
+            muted: "#64748B",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+          },
+          animation: {
+            "gradient-x": "gradientX 15s ease infinite",
+          },
+          keyframes: {
+            gradientX: {
+              "0%, 100%": { "background-position": "0% 50%" },
+              "50%": { "background-position": "100% 50%" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Animated gradient background */
+    .animated-bg {
+      background: linear-gradient(270deg, #1D4ED8, #16A34A, #3B82F6, #10B981);
+      background-size: 800% 800%;
+      animation: gradientX 15s ease infinite;
+    }
+  </style>
+</head>
+<body class="bg-soft font-sans text-gray-800 transition-colors duration-500">
+
+  <div class="flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r shadow-sm flex flex-col justify-between">
+      <div class="p-6 flex flex-col flex-grow">
+        <h1 class="text-2xl font-bold text-primary mb-8 select-none">🎓 School Admin</h1>
+        <!-- Nav with active state and collapsible submenu -->
+        <nav id="sidebar-nav" class="flex flex-col space-y-2 text-sm text-muted flex-grow overflow-auto">
+
+          <a href="#" class="nav-link flex items-center gap-3 px-3 py-2 rounded hover:bg-primary hover:text-white cursor-pointer" data-section="">
+            🏠 Dashboard
+          </a>
+
+          <div>
+            <button
+              type="button"
+              class="flex items-center justify-between w-full px-3 py-2 text-left rounded hover:bg-primary hover:text-white cursor-pointer nav-link"
+              data-section="teachers"
+            >
+              <span class="flex items-center gap-3">👩‍🏫 Teachers</span>
+              <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="ml-6 mt-1 max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out" data-submenu="teachers">
+              <a href="#" class="block py-1 px-3 rounded hover:bg-primary hover:text-white cursor-pointer">Add Teacher</a>
+              <a href="#" class="block py-1 px-3 rounded hover:bg-primary hover:text-white cursor-pointer">All Teachers</a>
+            </div>
+          </div>
+
+          <a href="#" class="nav-link flex items-center gap-3 px-3 py-2 rounded hover:bg-primary hover:text-white cursor-pointer" data-section="">
+            🎒 Students
+          </a>
+          <a href="#" class="nav-link flex items-center gap-3 px-3 py-2 rounded hover:bg-primary hover:text-white cursor-pointer" data-section="">
+            📝 Exams
+          </a>
+          <a href="#" class="nav-link flex items-center gap-3 px-3 py-2 rounded hover:bg-primary hover:text-white cursor-pointer" data-section="">
+            📊 Reports
+          </a>
+          <a href="#" class="nav-link flex items-center gap-3 px-3 py-2 rounded hover:bg-primary hover:text-white cursor-pointer" data-section="">
+            ⚙️ Settings
+          </a>
+        </nav>
+      </div>
+
+      <div class="p-6">
+        <button
+          id="logout-btn"
+          class="w-full bg-primary text-white py-2 rounded-lg hover:bg-blue-700 transition"
+        >
+          Logout
+        </button>
+
+        <button
+          id="dark-toggle"
+          class="w-full mt-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300 transition"
+          aria-label="Toggle Dark Mode"
+        >
+          Toggle Dark Mode
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content with animated background -->
+    <main class="flex-1 overflow-y-auto p-8 space-y-10 animated-bg rounded-l-xl shadow-lg">
+      <!-- Overlay with semi-transparent white to keep content readable -->
+      <div class="bg-white/90 dark:bg-gray-900/80 p-6 rounded-xl shadow-md backdrop-blur-sm">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-2xl font-semibold select-none text-gray-900 dark:text-gray-100">Welcome back, Admin</h2>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search students, teachers..."
+            class="w-64 px-4 py-2 border border-gray-300 rounded-md focus:outline-primary transition"
+          />
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <div class="bg-primary text-white p-6 rounded-xl shadow hover:shadow-lg transition cursor-default select-none">
+            <h3 class="text-sm opacity-80">Total Students</h3>
+            <p class="text-3xl font-bold mt-2">1,250</p>
+          </div>
+          <div class="bg-accent text-white p-6 rounded-xl shadow hover:shadow-lg transition cursor-default select-none">
+            <h3 class="text-sm opacity-80">Total Teachers</h3>
+            <p class="text-3xl font-bold mt-2">85</p>
+          </div>
+          <div class="bg-yellow-400 text-white p-6 rounded-xl shadow hover:shadow-lg transition cursor-default select-none">
+            <h3 class="text-sm opacity-80">Upcoming Exams</h3>
+            <p class="text-3xl font-bold mt-2">5</p>
+          </div>
+          <div class="bg-rose-500 text-white p-6 rounded-xl shadow hover:shadow-lg transition cursor-default select-none">
+            <h3 class="text-sm opacity-80">Pending Reports</h3>
+            <p class="text-3xl font-bold mt-2">12</p>
+          </div>
+        </div>
+
+        <!-- Recent Activity Table -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Recent Results</h3>
+            <button class="text-sm text-primary hover:underline">View All</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table
+              id="results-table"
+              class="w-full text-sm text-left text-gray-600 dark:text-gray-300"
+            >
+              <thead class="bg-gray-100 dark:bg-gray-700 border-b">
+                <tr>
+                  <th class="py-3 px-4">Student</th>
+                  <th class="py-3 px-4">Subject</th>
+                  <th class="py-3 px-4">Score</th>
+                  <th class="py-3 px-4">Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                  <td class="py-2 px-4">Jane Doe</td>
+                  <td class="py-2 px-4">Mathematics</td>
+                  <td class="py-2 px-4">85</td>
+                  <td class="py-2 px-4 font-bold text-green-600">B</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                  <td class="py-2 px-4">Eric M.</td>
+                  <td class="py-2 px-4">Physics</td>
+                  <td class="py-2 px-4">92</td>
+                  <td class="py-2 px-4 font-bold text-blue-600">A</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                  <td class="py-2 px-4">Anna K.</td>
+                  <td class="py-2 px-4">Biology</td>
+                  <td class="py-2 px-4">78</td>
+                  <td class="py-2 px-4 font-bold text-yellow-500">C</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                  <td class="py-2 px-4">David P.</td>
+                  <td class="py-2 px-4">Chemistry</td>
+                  <td class="py-2 px-4">88</td>
+                  <td class="py-2 px-4 font-bold text-green-600">B</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Sidebar nav active link toggle
+    const navLinks = document.querySelectorAll("#sidebar-nav .nav-link");
+    navLinks.forEach((link) =>
+      link.addEventListener("click", (e) => {
+        navLinks.forEach((l) => l.classList.remove("bg-primary", "text-white"));
+        e.currentTarget.classList.add("bg-primary", "text-white");
+      })
+    );
+
+    // Toggle submenu (teachers)
+    const submenuBtn = document.querySelector('[data-section="teachers"]');
+    const submenu = document.querySelector('[data-submenu="teachers"]');
+    submenuBtn.addEventListener("click", () => {
+      if (submenu.style.maxHeight) {
+        submenu.style.maxHeight = null;
+        submenuBtn.querySelector("svg").classList.remove("rotate-180");
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+        submenuBtn.querySelector("svg").classList.add("rotate-180");
+      }
+    });
+
+    // Dark mode toggle
+    const darkToggle = document.getElementById("dark-toggle");
+    darkToggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+
+</body>
+</html>

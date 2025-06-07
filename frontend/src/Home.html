@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your School Name</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+    a {
+      color: #004080;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Header & Nav */
+    header {
+      background: #004080;
+      color: white;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #ffcc00;
+    }
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    ul.nav-links li {
+      padding: 10px 0;
+    }
+    /* Hero Section */
+    .hero {
+      background: url('https://apadeschoolrw.org/wp-content/uploads/2021/11/home_slider_1.jpg') no-repeat center center/cover;
+      height: 400px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 20px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #ffcc00;
+      color: #004080;
+      padding: 10px 25px;
+      margin-top: 20px;
+      font-weight: 600;
+      border-radius: 3px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #e6b800;
+    }
+    /* Main Content */
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 15px;
+    }
+    section.about, section.news, section.contact {
+      background: white;
+      padding: 30px 25px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgb(0 0 0 / 0.05);
+    }
+    section.about h2,
+    section.news h2,
+    section.contact h2 {
+      color: #004080;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #ffcc00;
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+    section.about p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.5;
+    }
+    /* News Grid */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .news-item {
+      background: #f0f0f0;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .news-item:hover {
+      transform: translateY(-5px);
+    }
+    .news-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .news-item-content {
+      padding: 15px;
+    }
+    .news-item-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #004080;
+    }
+    .news-item-content p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input[type="text"], input[type="email"], textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    button[type="submit"] {
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button[type="submit"]:hover {
+      background: #002850;
+    }
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px 15px;
+      margin-top: 40px;
+    }
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      ul.nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">APADE SCHOOL</div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Academics</a></li>
+          <li><a href="#">News & Events</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to APADE School</h1>
+      <p>Educating future leaders with excellence, integrity, and compassion.</p>
+      <a href="#" class="btn-primary">Apply Now</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="about">
+      <h2>About Us</h2>
+      <p>APADE School is committed to providing high-quality education for students from diverse backgrounds. We foster academic excellence, leadership, and social responsibility.</p>
+    </section>
+
+    <section class="news">
+      <h2>Latest News</h2>
+      <div class="news-grid">
+        <article class="news-item">
+          <img src="https://apadeschoolrw.org/wp-content/uploads/2021/11/news1.jpg" alt="News 1" />
+          <div class="news-item-content">
+            <h3>New Academic Year Begins</h3>
+            <p>We warmly welcome new and returning students to the 2025 academic year.</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://apadeschoolrw.org/wp-content/uploads/2021/11/news2.jpg" alt="News 2" />
+          <div class="news-item-content">
+            <h3>Sports Day Highlights</h3>
+            <p>Our students showed remarkable talents and team spirit during the annual sports day.</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://apadeschoolrw.org/wp-content/uploads/2021/11/news3.jpg" alt="News 3" />
+          <div class="news-item-content">
+            <h3>Admissions Now Open</h3>
+            <p>Apply now for the upcoming academic year. We are accepting applications for all grades.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 APADE School | All Rights Reserved
+  </footer>
+
+</body>
+</html>
