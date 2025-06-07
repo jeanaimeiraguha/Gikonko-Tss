@@ -26,7 +26,9 @@ const NotFound = () => {
         </motion.div>
 
         <h1 className="text-5xl font-bold text-white mb-4">404</h1>
-        <p className="text-lg text-gray-300 mb-6">Oops! The page you're looking for  still under construction navigate to home</p>
+        <p className="text-lg text-gray-300 mb-6">Oops!
+The page you're trying to reach is still being built.
+Please kindly head back to the home page.</p>
 
         <Link
           to="/"

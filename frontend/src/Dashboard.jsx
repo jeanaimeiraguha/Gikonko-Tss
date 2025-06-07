@@ -21,10 +21,10 @@ const images = [
   { src: "https://pbs.twimg.com/media/FvUKNfeXsAEVjFW?format=jpg&name=4096x4096" },
   { src: "src/a.jpg" },
   { src: "src/acc2.jpg" },
-  { src: "src/abc.jpg" },
-  { src: "https://images.unsplash.com/photo-1533713451883-ec4b9fc3ecb9?auto=format&fit=crop&w=800&q=80" },
-  { src: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" },
-  { src: "https://pbs.twimg.com/media/FjxeB9rX0AEEkNP?format=jpg&name=large" },
+  { src: "src/abcd.png" },
+  { src: "https://rusumorpcl.com/images/WhatsApp_Image_2020-09-21_at_205406_1.jpeg" },
+  { src: "https://scontent.fnbo18-1.fna.fbcdn.net/v/t39.30808-6/483795602_1163679748882157_6012386503642438116_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeG8f4JQbBAL0rWKzrjQscGaZstZOdcri9lmy1k51yuL2aOy6-ItM1eEmFN_kowDOrsQl7EH1LoqXwdPBjcsLXRr&_nc_ohc=3OPt7HkO6tYQ7kNvwGQVp-8&_nc_oc=AdlAeyI-Dpzv24smPvCvhH-dmf1FR5c4EDtnhBJEokqKZS_aRgrdyOU355R-4xw_xlA&_nc_zt=23&_nc_ht=scontent.fnbo18-1.fna&_nc_gid=TBx9kTiZO6saGsxRVQVaxQ&oh=00_AfMdnooZM8aMlqf72SqNLHu4D95k52kwC-_jlWPVPsREHQ&oe=684A3859" },
+  { src: "https://en.igihe.com/IMG/arton4825.jpg?1356359829" },
 ];
 
 // Icons mapped to menu items (must match labels in navItems exactly)
