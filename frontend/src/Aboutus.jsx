@@ -46,6 +46,9 @@ const AboutUs = () => {
         <h2 className="text-4xl font-bold text-center mb-10 tracking-wide text-yellow-400">
           About GIKONKO Technical Secondary School
         </h2>
+        <p>Gikonko Tss is  Technical Secondary located in South Of Rwanda It is in South 
+          In Gisagara District , Gikonko Sector 
+           </p>
 
         <div className="space-y-12 text-lg leading-relaxed">
           <section className="flex items-start space-x-6 group hover:bg-yellow-700/20 p-6 rounded-lg transition duration-300 cursor-default">
