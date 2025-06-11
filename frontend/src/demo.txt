@@ -16,16 +16,7 @@ import {
 } from "react-icons/ai";
 import { GiTrade } from "react-icons/gi";
 
-// Image list
-const images = [
-  { src: "https://pbs.twimg.com/media/FvUKNfeXsAEVjFW?format=jpg&name=4096x4096" },
-  { src: "src/a.jpg" },
-  { src: "src/acc2.jpg" },
-  { src: "src/abcd.png" },
-  { src: "https://rusumorpcl.com/images/WhatsApp_Image_2020-09-21_at_205406_1.jpeg" },
-  { src: "https://scontent.fnbo18-1.fna.fbcdn.net/v/t39.30808-6/483795602_1163679748882157_6012386503642438116_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeG8f4JQbBAL0rWKzrjQscGaZstZOdcri9lmy1k51yuL2aOy6-ItM1eEmFN_kowDOrsQl7EH1LoqXwdPBjcsLXRr&_nc_ohc=3OPt7HkO6tYQ7kNvwGQVp-8&_nc_oc=AdlAeyI-Dpzv24smPvCvhH-dmf1FR5c4EDtnhBJEokqKZS_aRgrdyOU355R-4xw_xlA&_nc_zt=23&_nc_ht=scontent.fnbo18-1.fna&_nc_gid=TBx9kTiZO6saGsxRVQVaxQ&oh=00_AfMdnooZM8aMlqf72SqNLHu4D95k52kwC-_jlWPVPsREHQ&oe=684A3859" },
-  { src: "https://en.igihe.com/IMG/arton4825.jpg?1356359829" },
-];
+
 
 // Icons mapped to menu items (must match labels in navItems exactly)
 const iconMap = {
@@ -48,9 +39,8 @@ const Navbar = () => {
     { label: "NEWS", path: "/news" },
     { label: "INNOVATION", path: "/innovation" },
     { label: "PUBLICATION", path: "/publication" },
-    { label: "ADMINISTRATIONS", path: "/login" },
-    { label: "CONTACT US", path: "/contact" },
-    // { label: "CONTACT US", path: "/contact" }
+    { label: "ADMINISTRATIONS", path: "/administrations" },
+    { label: "CONTACT US", path: "/contactus" },
   ];
 
   const location = useLocation();
@@ -129,32 +119,9 @@ const Navbar = () => {
   );
 };
 
-// Scrolling images component
-const ScrollingImagesBackground = () => {
-  const [current, setCurrent] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
   return (
     <div style={{ position: "relative", height: "calc(100vh - 132px)", overflow: "hidden" }}>
-      {images.map((img, idx) => (
-        <img
-          key={idx}
-          src={img.src}
-          style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            opacity: idx === current ? 1 : 0,
-            transition: "opacity 1s ease-in-out, transform 1s ease-in-out",
-            transform: idx === current ? "scale(1.05)" : "scale(1)",
-            filter: "brightness(0.7)",
-          }}
-        />
+     
       ))}
       <div
         style={{
@@ -169,22 +136,9 @@ const ScrollingImagesBackground = () => {
 };
 
 // Welcome message
-const WelcomeMessage = () => (
-  <div
-    style={{
-      marginTop: "72px",
-      height: "60px",
-      backgroundColor: "rgba(0, 64, 128, 0.85)",
-      color: "#fff",
-      fontSize: "1.5rem",
-      fontWeight: "600",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      zIndex: 11,
-    }}
+
   >
-    Welcome to GIKONKO TECHNICAL SECONDARY SCHOOL!
+
   </div>
 );
 
@@ -221,7 +175,7 @@ const DashboardPage = () => (
   <>
     <Navbar />
     <WelcomeMessage />
-    <ScrollingImagesBackground />
+
     <Footer />
   </>
 );
