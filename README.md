@@ -46,11 +46,11 @@ A modern and responsive school website developed to manage and display essential
 
 ## 🛠️ Built With
 
-- **Frontend**: HTML, CSS, JavaScript *(or React, if applicable)*  
-- **Backend**: PHP / Node.js *(based on your stack)*  
-- **Database**: MySQL / MongoDB  
-- **Styling**: Tailwind CSS / Bootstrap  
-- **Hosting**: GitHub Pages / Vercel / cPanel / Firebase (choose yours)
+- **Frontend**: HTML, CSS, JavaScript  , React Js  
+- **Backend**: Node.js   
+- **Database**:MongoDB  
+- **Styling**: Tailwind CSS  
+- **Hosting**:  Vercel 
 
 ---
 
