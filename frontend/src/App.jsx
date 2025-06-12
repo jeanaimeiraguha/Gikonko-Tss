@@ -1,20 +1,21 @@
-
+// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './pages/Dashboard';
-import Services from './pages/Service';    
-import AboutUs from './pages/AboutUs';     
+import StudentDashboard from './pages/studentdashboard';
+import Dashboard from './pages/dashboard';
+import Services from './pages/service';    
+import AboutUs from './pages/aboutUs';     
 import NotFound from './pages/NotFound';   
-// import News from './News'
 import News from './pages/News';
-import Innovation from './pages/Innovation'; 
-import Publication from './pages/Publication'; 
-import Contact from './pages/Contact';
-import Login from './pages/Login';
-// import Trainee from './component/trainee'
-// import Trade from './pages/trade'
-import Trades from './pages/trade'
-import Trainee from './pages/trainee'
+import Innovation from './pages/innovation'; 
+import Publication from './pages/publication'; 
+import Contact from './pages/contact';
+import Login from './pages/login';
+import Trades from './pages/trade';
+import Trainee from './pages/trainee';
+import Students from './pages/students';
+import Marks from './pages/marks'; 
+
 function App() {
   return (
     <Router>
@@ -25,11 +26,14 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/innovation" element={<Innovation />} />
         <Route path="/publication" element={<Publication />} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/trades" element={<Trades/>} />
-        <Route path="/trainee" element={<Trainee/>} />
+        <Route path="/trades" element={<Trades />} />
+        <Route path="/trainee" element={<Trainee />} />
+        <Route path="/studentdashboard" element={<StudentDashboard />} />
+        <Route path="/students" element={<Students />} />
+        <Route path="/marks" element={<Marks />} />
       </Routes>
     </Router>
   );
