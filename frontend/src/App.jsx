@@ -1,4 +1,4 @@
-// src/App.jsx
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import StudentDashboard from './pages/studentdashboard';
@@ -13,7 +13,8 @@ import Contact from './pages/contact';
 import Login from './pages/login';
 import Trades from './pages/trade';
 import Trainee from './pages/trainee';
-// import Students from './pages/students';
+// import Students from './pages/students'import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Marks from './pages/marks'; 
 
 function App() {
