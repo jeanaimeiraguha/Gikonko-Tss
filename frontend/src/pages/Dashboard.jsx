@@ -36,7 +36,7 @@ const iconMap = {
   "CONTACT US": <AiOutlinePhone />,
 };
 
-// Navbar component
+// ✅ Compact Navbar
 const Navbar = () => {
   const location = useLocation();
   const navItems = [
@@ -58,7 +58,7 @@ const Navbar = () => {
         width: "100%",
         backgroundColor: "#002244",
         color: "#fff",
-        padding: "0.8rem 2rem",
+        padding: "0.5rem 1rem",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -69,9 +69,10 @@ const Navbar = () => {
     >
       <div
         style={{
-          fontSize: "1.5rem",
+          fontSize: "1.2rem",
           color: "#ffd700",
           fontWeight: "bold",
+          padding: "0.3rem 0.5rem",
         }}
       >
         GIKONKO TSS
@@ -79,9 +80,10 @@ const Navbar = () => {
       <ul
         style={{
           display: "flex",
-          gap: "1rem",
+          gap: "0.8rem",
           listStyle: "none",
           flexWrap: "wrap",
+          alignItems: "center",
         }}
       >
         {navItems.map(({ label, path }) => {
@@ -92,7 +94,7 @@ const Navbar = () => {
               key={label}
               style={{
                 backgroundColor: isActive ? "#7c3aed" : "transparent",
-                borderRadius: "5px",
+                borderRadius: "4px",
                 transition: "0.3s",
               }}
             >
@@ -101,14 +103,15 @@ const Navbar = () => {
                 style={{
                   color: isActive ? "#fff" : "#ccc",
                   textDecoration: "none",
-                  padding: "0.4rem 0.6rem",
+                  padding: "0.3rem 0.4rem",
                   display: "flex",
                   alignItems: "center",
-                  gap: "0.4rem",
+                  gap: "0.3rem",
                   fontWeight: 500,
+                  fontSize: "0.85rem",
                 }}
               >
-                {React.cloneElement(icon, { size: 18 })} {label}
+                {React.cloneElement(icon, { size: 16 })} {label}
               </Link>
             </li>
           );
@@ -122,12 +125,12 @@ const Navbar = () => {
 const WelcomeMessage = () => (
   <div
     style={{
-      marginTop: "70px",
+      marginTop: "62px",
       backgroundColor: "#003366",
       color: "#fff",
       padding: "1rem",
       textAlign: "center",
-      fontSize: "1.3rem",
+      fontSize: "1.2rem",
       fontWeight: "bold",
       letterSpacing: "1px",
     }}
@@ -136,7 +139,7 @@ const WelcomeMessage = () => (
   </div>
 );
 
-// Slideshow
+// Hero Section (Image Carousel)
 const ScrollingImagesBackground = () => {
   const [current, setCurrent] = useState(0);
 
@@ -153,6 +156,7 @@ const ScrollingImagesBackground = () => {
         <img
           key={idx}
           src={img.src}
+          alt=""
           style={{
             position: "absolute",
             width: "100%",
@@ -178,10 +182,10 @@ const ScrollingImagesBackground = () => {
           padding: "1rem 2rem",
         }}
       >
-        <h1 style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
+        <h1 style={{ fontSize: "2.2rem", fontWeight: "bold" }}>
           Shaping Future Technicians
         </h1>
-        <p style={{ fontSize: "1.2rem", marginTop: "0.5rem" }}>
+        <p style={{ fontSize: "1.1rem", marginTop: "0.5rem" }}>
           Empowering Youth through Practical Skills & Innovation 💡
         </p>
       </div>
@@ -202,7 +206,7 @@ const ScrollingImagesBackground = () => {
   );
 };
 
-// Call to Action section
+// CTA Section
 const CallToAction = () => (
   <section
     style={{
@@ -212,7 +216,7 @@ const CallToAction = () => (
     }}
   >
     <h2
-      style={{ fontSize: "2rem", marginBottom: "1rem", color: "#004080" }}
+      style={{ fontSize: "1.8rem", marginBottom: "1rem", color: "#004080" }}
     >
       Ready to explore our programs?
     </h2>
@@ -224,11 +228,12 @@ const CallToAction = () => (
       style={{
         backgroundColor: "#7c3aed",
         color: "#fff",
-        padding: "0.75rem 1.5rem",
+        padding: "0.7rem 1.4rem",
         borderRadius: "5px",
         textDecoration: "none",
         fontWeight: "600",
         boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+        fontSize: "0.95rem",
       }}
     >
       Learn More
@@ -236,7 +241,7 @@ const CallToAction = () => (
   </section>
 );
 
-// Footer component
+// Footer
 const Footer = () => (
   <footer
     style={{
@@ -267,7 +272,7 @@ const Footer = () => (
   </footer>
 );
 
-// Main Page component
+// Page Layout
 const DashboardPage = () => (
   <>
     <Navbar />
